@@ -1,5 +1,5 @@
 # Text Similarity & Plagiarism Detector 
-# Developed by Al Yazdani, January 2026
+# Developed by Al Yazdani, March 2026
 import streamlit as st
 from difflib import SequenceMatcher
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -57,17 +57,22 @@ def interpret(score):
 # Streamlit UI
 # ----------------------------
 st.title("📄 Text Similarity & Plagiarism Detector")
-st.subheader("Developed by: :blue[Al Yazdani]",divider=True)
+st.header("Developed by: :blue[Al Yazdani]",divider=True)
+
+st.markdown("Comparing two texts using lexical and semantic similarity metrics, including: **character**, **Jaccard** (overlap to union ratio), **TF-IDF** (word frequency and rarity), and **embedding** (semantic) similarities.")
+
 st.markdown(
-    """
-Compare two texts using **lexical and semantic similarity metrics**.
-Each input is limited to **500 words**.
+    """**Instructions:**
+1. Enter two texts in the boxes below (**max 1000 words each**).
+2. Adjust the weights for each similarity metric to reflect their importance in your analysis.
+3. Click "Run Similarity Analysis" to see the results.
+4. Download the results as a CSV file for further review.
 """
 )
 
 # Text inputs
-text1 = st.text_area("**Text A**", "A Banach space is a vector space which is a complete metric space.",height=200)
-text2 = st.text_area("**Text B**", "A Hilbert space is a Banach space that is endowed with an inner product.",height=200) 
+text1 = st.text_area("**Text A**", "A Banach space is a vector space that is a complete metric space.",height=250)
+text2 = st.text_area("**Text B**", "A Hilbert space is a Banach space that is endowed with an inner product.",height=250) 
 
 # Word count check
 def word_count(text):
@@ -75,11 +80,11 @@ def word_count(text):
 
 wc1, wc2 = word_count(text1), word_count(text2)
 
-st.caption(f"Text A: {wc1}/500 words")
-st.caption(f"Text B: {wc2}/500 words")
+st.caption(f"Text A: {wc1}/1000 words")
+st.caption(f"Text B: {wc2}/1000 words")
 
-if wc1 > 500 or wc2 > 500:
-    st.error("Each text must be 500 words or fewer.")
+if wc1 > 1000 or wc2 > 1000:
+    st.error("Each text must be 1000 words or fewer.")
     st.stop()
 
 # Weight sliders
@@ -87,7 +92,7 @@ st.subheader("⚖️ Similarity Weights")
 
 w_char = st.slider("Character similarity weight", 0.0, 1.0, 0.15)
 w_jaccard = st.slider("Jaccard similarity weight", 0.0, 1.0, 0.15)
-w_tfidf = st.slider("TF-IDF similarity weight", 0.0, 1.0, 0.30)
+w_tfidf = st.slider("TF-IDF cosine similarity weight", 0.0, 1.0, 0.30)
 w_embed = st.slider("Embedding similarity weight", 0.0, 1.0, 0.40)
 
 weight_sum = w_char + w_jaccard + w_tfidf + w_embed
@@ -144,4 +149,43 @@ if st.button("🔍 Run Similarity Analysis"):
 - **Semantic similarity** (embeddings) is **{interpret(embed).lower()}**
 - **Overall**, the two texts are **{interpret(weighted).lower()}**
         """
+    )
+
+
+    
+# add functionality to download into a csv the two texts, the scores and interpretations and weights used
+    import pandas as pd
+    from io import StringIO
+
+    results = {
+        "Metric": [
+            "Character similarity",
+            "Jaccard similarity",
+            "TF-IDF similarity",
+            "Embedding similarity",
+            "Weighted overall similarity"
+        ],
+        "Score": [char, jac, tfidf, embed, weighted],
+        "Interpretation": [
+            interpret(char),
+            interpret(jac),
+            interpret(tfidf),
+            interpret(embed),
+            interpret(weighted)
+        ],
+        "Weight": [w_char, w_jaccard, w_tfidf, w_embed, "N/A"],
+        "texts": [text1, text2, "", "", ""]
+    }
+
+    df = pd.DataFrame(results)
+
+    csv_buffer = StringIO()
+    df.to_csv(csv_buffer, index=False)
+    csv_data = csv_buffer.getvalue()
+
+    st.download_button(
+        label="📥 Download Results as CSV",
+        data=csv_data,
+        file_name="text_similarity_results.csv",
+        mime="text/csv"
     )
