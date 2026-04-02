@@ -1,54 +1,7 @@
-annotated-types @ file:///C:/miniconda3/conda-bld/annotated-types_1761745107361/work
-blis @ file:///C:/miniconda3/conda-bld/cython-blis_1765532877000/work
-brotlicffi @ file:///C:/miniconda3/conda-bld/brotlicffi_1764961374486/work
-catalogue @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/catalogue_1729047720998/work
-certifi @ file:///C:/Users/task_176765924055489/croot/certifi_1767659363027/work/certifi
-cffi @ file:///C:/miniconda3/conda-bld/cffi_1761832792955/work
-charset-normalizer @ file:///C:/miniconda3/conda-bld/charset-normalizer_1761744975868/work
-click @ file:///C:/miniconda3/conda-bld/click_1764332372183/work
-cloudpathlib @ file:///C:/Users/task_176778646358430/croot/cloudpathlib_1767787249014/work
-cloudpickle @ file:///C:/miniconda3/conda-bld/cloudpickle_1764930583045/work
-colorama @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/colorama_1729036581634/work
-confection @ file:///C:/b/abs_c7k0lrp401/croot/confection_1750277652922/work
-cymem @ file:///C:/miniconda3/conda-bld/cymem_1756984399628/work
-en_core_web_lg @ https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.8.0/en_core_web_lg-3.8.0-py3-none-any.whl#sha256=293e9547a655b25499198ab15a525b05b9407a75f10255e405e8c3854329ab63
-idna @ file:///C:/miniconda3/conda-bld/idna_1761912043388/work
-Jinja2 @ file:///C:/b/abs_920kup4e6u/croot/jinja2_1741711580669/work
-markdown-it-py @ file:///C:/Users/task_176700171154409/croot/markdown-it-py_1767001834659/work
-MarkupSafe @ file:///C:/b/abs_a0ma7ge0jc/croot/markupsafe_1738584052792/work
-mdurl @ file:///C:/miniconda3/conda-bld/mdurl_1758552277768/work
-mkl-service==2.5.2
-mkl_fft @ file:///C:/miniconda3/conda-bld/mkl_fft_1761592916781/work
-mkl_random @ file:///C:/miniconda3/conda-bld/mkl_random_1761593076691/work
-murmurhash @ file:///C:/miniconda3/conda-bld/murmurhash_1764711179392/work
-numpy @ file:///C:/miniconda3/conda-bld/numpy_and_numpy_base_1761922148267/work/dist/numpy-2.1.3-cp313-cp313-win_amd64.whl#sha256=5351be2879ca7acd14cf55f62b699f51cc5e651266398331203c2d6a91674eae
-packaging @ file:///C:/miniconda3/conda-bld/packaging_1761049099114/work
-preshed @ file:///C:/Users/task_176616361373795/croot/preshed_1766163717968/work
-pycparser @ file:///C:/miniconda3/conda-bld/pycparser_1757496153123/work
-pydantic @ file:///C:/Users/task_177313434358995/croot/pydantic_1773134412162/work
-pydantic_core @ file:///C:/miniconda3/conda-bld/pydantic-core_1764009799098/work
-Pygments @ file:///C:/miniconda3/conda-bld/pygments_1762431428918/work
-PySocks @ file:///C:/miniconda3/conda-bld/pysocks_1761753030965/work
-requests @ file:///C:/miniconda3/conda-bld/requests_1762359611326/work
-rich @ file:///C:/miniconda3/conda-bld/rich_1760375661587/work
-ruamel_yaml_conda @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/ruamel_yaml_1729063591675/work
-setuptools==80.10.2
-shellingham @ file:///C:/miniconda3/conda-bld/shellingham_1761912227081/work
-smart_open @ file:///C:/Users/task_177003416914066/croot/smart_open_1770034272319/work
-spacy @ file:///C:/Users/task_176787279985364/croot/spacy_1767872962444/work
-spacy-legacy @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/spacy-legacy_1729101530634/work
-spacy-loggers @ file:///C:/Users/task_176795226395178/croot/spacy-loggers_1767952488258/work
-srsly @ file:///C:/miniconda3/conda-bld/srsly_1764254788215/work
-thinc @ file:///C:/miniconda3/conda-bld/thinc_1765546741304/work
-tqdm @ file:///C:/Users/task_177139862118811/croot/tqdm_1771398768256/work
-typer==0.20.0
-typer-slim==0.20.0
-typing-inspection @ file:///C:/miniconda3/conda-bld/typing-inspection_1760614188477/work
-typing_extensions @ file:///C:/b/abs_ecq8gc0vbm/croot/typing_extensions_1756281142218/work
-ujson @ file:///C:/miniconda3/conda-bld/ujson_1763119279088/work
-urllib3 @ file:///C:/Users/task_176781035981662/croot/urllib3_1767810483132/work
-wasabi @ file:///C:/miniconda3/conda-bld/wasabi_1757345820763/work
-weasel @ file:///C:/Users/task_176735716683313/croot/weasel_1767357657804/work
-wheel==0.46.3
-win_inet_pton @ file:///C:/miniconda3/conda-bld/win_inet_pton_1761746278300/work
-wrapt @ file:///C:/miniconda3/conda-bld/wrapt_1764243873382/work
+nltk
+numpy
+pandas
+plotly
+scikit-learn
+sentence_transformers
+streamlit

@@ -11,8 +11,8 @@ import pandas as pd
 import numpy as np
 from io import StringIO
 from difflib import SequenceMatcher
-
-from sklearn.feature_extraction.text import TfidfVectorizer
+import scikit-learn as sklearn
+from sklearn.feature_extraction.text import TfidfVectorizer 
 from sklearn.metrics.pairwise import cosine_similarity as sk_cosine
 
 from sentence_transformers import SentenceTransformer, CrossEncoder
