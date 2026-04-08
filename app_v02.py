@@ -654,7 +654,7 @@ if sent_matches:
 
     styled = (
         df_sent.style
-        .applymap(_color_score, subset=["Score"])
+        .map(_color_score, subset=["Score"])
         .format({"Score": "{:.1%}"})
     )
     st.dataframe(styled, use_container_width=True, hide_index=True)
